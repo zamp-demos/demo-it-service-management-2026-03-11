@@ -1,38 +1,5 @@
 [
     {
-        "id": "ITSM_001",
-        "category": "IT Service Management",
-        "name": "Email Gateway Outage \u2014 Meridian HQ",
-        "stockId": "INC-2026-0341",
-        "year": "2026-03-11",
-        "status": "Ready",
-        "currentStatus": "Ready for processing",
-        "priority": "Critical",
-        "affectedUsers": "1,200+"
-    },
-    {
-        "id": "ITSM_002",
-        "category": "IT Service Management",
-        "name": "VPN Authentication Failures \u2014 Remote Staff",
-        "stockId": "INC-2026-0342",
-        "year": "2026-03-11",
-        "status": "Ready",
-        "currentStatus": "Ready for processing",
-        "priority": "High",
-        "affectedUsers": "340"
-    },
-    {
-        "id": "ITSM_003",
-        "category": "IT Service Management",
-        "name": "Core Banking DB \u2014 Slow Query Degradation",
-        "stockId": "INC-2026-0343",
-        "year": "2026-03-11",
-        "status": "Ready",
-        "currentStatus": "Ready for processing",
-        "priority": "High",
-        "affectedUsers": "All branches"
-    },
-    {
         "id": "INC-2026-04821",
         "name": "James Holloway \u2014 Account Lockout",
         "category": "IT Service Management",
