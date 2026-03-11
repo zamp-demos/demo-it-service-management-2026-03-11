@@ -108,7 +108,8 @@ const server = http.createServer(async (req, res) => {
                 const scripts = [
                     { file: 'itsm_001_email_outage.cjs', id: 'ITSM_001' },
                     { file: 'itsm_002_vpn_failures.cjs', id: 'ITSM_002' },
-                    { file: 'itsm_003_db_degradation.cjs', id: 'ITSM_003' }
+                    { file: 'itsm_003_db_degradation.cjs', id: 'ITSM_003' },
+                    { file: 'simulation_INC-2026-04821.cjs', id: 'INC-2026-04821' }
                 ];
 
                 let totalDelay = 0;
