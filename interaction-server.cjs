@@ -76,29 +76,11 @@ const server = http.createServer(async (req, res) => {
             setTimeout(() => {
                 const cases = [
                     {
-                        id: "ITSM_001", name: "Email Gateway Outage — Meridian HQ", category: "IT Service Management",
-                        stockId: "INC-2026-0341", year: new Date().toISOString().split('T')[0],
-                        status: "Ready", currentStatus: "Awaiting trigger",
-                        priority: "Critical", affectedUsers: "1,200+"
-                    },
-                    {
-                        id: "ITSM_002", name: "VPN Authentication Failures — Remote Staff", category: "IT Service Management",
-                        stockId: "INC-2026-0342", year: new Date().toISOString().split('T')[0],
-                        status: "Ready", currentStatus: "Awaiting trigger",
-                        priority: "High", affectedUsers: "340"
-                    },
-                    {
                         id: "INC-2026-04821", name: "James Holloway — Account Lockout", category: "IT Service Management",
                         stockId: "INC-2026-04821", year: new Date().toISOString().split('T')[0],
                         status: "Ready", currentStatus: "Awaiting trigger",
                         subject: "James Holloway, Sales Operations", request: "Account locked — unable to log in",
                         ticketId: "INC-2026-04821"
-                    },
-                    {
-                        id: "ITSM_003", name: "Core Banking DB — Slow Query Degradation", category: "IT Service Management",
-                        stockId: "INC-2026-0343", year: new Date().toISOString().split('T')[0],
-                        status: "Ready", currentStatus: "Awaiting trigger",
-                        priority: "High", affectedUsers: "All branches"
                     }
                 ];
                 fs.writeFileSync(processesPath, JSON.stringify(cases, null, 4));
