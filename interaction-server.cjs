@@ -76,6 +76,14 @@ const server = http.createServer(async (req, res) => {
             setTimeout(() => {
                 const cases = [
                     {
+                        id: "INC-2026-05134", name: "Priya Nair — Software Access Request", category: "IT Service Management",
+                        stockId: "INC-2026-05134", year: new Date().toISOString().split('T')[0],
+                        status: "In Progress", currentStatus: "Awaiting trigger",
+                        subject: "Priya Nair, Marketing", request: "Access requested for Adobe Creative Cloud",
+                        documentType: "Service Request", riskLevel: "Low",
+                        ticketId: "INC-2026-05134"
+                    },
+                    {
                         id: "INC-2026-04821", name: "James Holloway — Account Lockout", category: "IT Service Management",
                         stockId: "INC-2026-04821", year: new Date().toISOString().split('T')[0],
                         status: "In Progress", currentStatus: "Awaiting trigger",
@@ -88,6 +96,7 @@ const server = http.createServer(async (req, res) => {
                 fs.writeFileSync(KB_VERSIONS_PATH, '[]');
 
                 const scripts = [
+                    { file: 'simulation_INC-2026-05134.cjs', id: 'INC-2026-05134' },
                     { file: 'simulation_INC-2026-04821.cjs', id: 'INC-2026-04821' }
                 ];
 
