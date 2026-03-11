@@ -78,13 +78,13 @@ const server = http.createServer(async (req, res) => {
                     {
                         id: "ITSM_001", name: "Email Gateway Outage — Meridian HQ", category: "IT Service Management",
                         stockId: "INC-2026-0341", year: new Date().toISOString().split('T')[0],
-                        status: "In Progress", currentStatus: "Initializing...",
+                        status: "Ready", currentStatus: "Awaiting trigger",
                         priority: "Critical", affectedUsers: "1,200+"
                     },
                     {
                         id: "ITSM_002", name: "VPN Authentication Failures — Remote Staff", category: "IT Service Management",
                         stockId: "INC-2026-0342", year: new Date().toISOString().split('T')[0],
-                        status: "In Progress", currentStatus: "Initializing...",
+                        status: "Ready", currentStatus: "Awaiting trigger",
                         priority: "High", affectedUsers: "340"
                     },
                     {
@@ -97,7 +97,7 @@ const server = http.createServer(async (req, res) => {
                     {
                         id: "ITSM_003", name: "Core Banking DB — Slow Query Degradation", category: "IT Service Management",
                         stockId: "INC-2026-0343", year: new Date().toISOString().split('T')[0],
-                        status: "In Progress", currentStatus: "Initializing...",
+                        status: "Ready", currentStatus: "Awaiting trigger",
                         priority: "High", affectedUsers: "All branches"
                     }
                 ];
@@ -106,9 +106,6 @@ const server = http.createServer(async (req, res) => {
                 fs.writeFileSync(KB_VERSIONS_PATH, '[]');
 
                 const scripts = [
-                    { file: 'itsm_001_email_outage.cjs', id: 'ITSM_001' },
-                    { file: 'itsm_002_vpn_failures.cjs', id: 'ITSM_002' },
-                    { file: 'itsm_003_db_degradation.cjs', id: 'ITSM_003' },
                     { file: 'simulation_INC-2026-04821.cjs', id: 'INC-2026-04821' }
                 ];
 
