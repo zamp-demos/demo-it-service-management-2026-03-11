@@ -88,6 +88,13 @@ const server = http.createServer(async (req, res) => {
                         priority: "High", affectedUsers: "340"
                     },
                     {
+                        id: "INC-2026-04821", name: "James Holloway — Account Lockout", category: "IT Service Management",
+                        stockId: "INC-2026-04821", year: new Date().toISOString().split('T')[0],
+                        status: "Ready", currentStatus: "Awaiting trigger",
+                        subject: "James Holloway, Sales Operations", request: "Account locked — unable to log in",
+                        ticketId: "INC-2026-04821"
+                    },
+                    {
                         id: "ITSM_003", name: "Core Banking DB — Slow Query Degradation", category: "IT Service Management",
                         stockId: "INC-2026-0343", year: new Date().toISOString().split('T')[0],
                         status: "In Progress", currentStatus: "Initializing...",
