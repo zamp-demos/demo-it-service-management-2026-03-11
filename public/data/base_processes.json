@@ -1,1 +1,35 @@
-/tmp/itsm_demo/base_processes.json
+[
+    {
+        "id": "ITSM_001",
+        "category": "IT Service Management",
+        "name": "Email Gateway Outage — Meridian HQ",
+        "stockId": "INC-2026-0341",
+        "year": "2026-03-11",
+        "status": "Ready",
+        "currentStatus": "Ready for processing",
+        "priority": "Critical",
+        "affectedUsers": "1,200+"
+    },
+    {
+        "id": "ITSM_002",
+        "category": "IT Service Management",
+        "name": "VPN Authentication Failures — Remote Staff",
+        "stockId": "INC-2026-0342",
+        "year": "2026-03-11",
+        "status": "Ready",
+        "currentStatus": "Ready for processing",
+        "priority": "High",
+        "affectedUsers": "340"
+    },
+    {
+        "id": "ITSM_003",
+        "category": "IT Service Management",
+        "name": "Core Banking DB — Slow Query Degradation",
+        "stockId": "INC-2026-0343",
+        "year": "2026-03-11",
+        "status": "Ready",
+        "currentStatus": "Ready for processing",
+        "priority": "High",
+        "affectedUsers": "All branches"
+    }
+]
