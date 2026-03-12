@@ -372,15 +372,6 @@ const EmailDraftViewer = ({ artifact, onClose }) => {
     const handleSend = async () => {
         setSending(true);
         try {
-            // Check if we are in simulation mode (online demo)
-            if (artifact.onTriggerSimulation) {
-                await new Promise(r => setTimeout(r, 1000));
-                artifact.onTriggerSimulation();
-                setSent(true);
-                setTimeout(() => onClose(), 1000);
-                return;
-            }
-
             await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/email-status`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
