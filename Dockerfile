@@ -1,14 +1,13 @@
 FROM node:22-slim
 WORKDIR /app
 
-# Install dependencies
-COPY package.json package-lock.json ./
-RUN npm ci
-
-# Copy all source files
+# Copy source files
 COPY . .
 
-# Railway injects PORT dynamically — our server reads process.env.PORT
+# Install dependencies
+RUN npm install
+
+# Railway injects PORT env var dynamically
 EXPOSE 3001
 
 CMD ["node", "interaction-server.cjs"]
