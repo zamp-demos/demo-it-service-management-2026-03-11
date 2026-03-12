@@ -138,7 +138,8 @@ const waitForEmail = async () => {
                 "Provisioning blocked \u2014 device compliance requirement not met"
 ],
             artifacts: [
-                { id: "tbl-dev-001", type: "table", label: "Device Enrollment Check", data: {"Employee": "James Whitfield", "Employee ID": "MBK-4421", "Email": "james.whitfield@meridianbank.com", "Enrolled Devices Found": "0", "MDM Platform": "Microsoft Intune", "Enrollment Required": "Yes", "Provisioning Status": "Blocked"} }
+                { id: "tbl-dev-001", type: "table", label: "Device Enrollment Check", data: {"Employee": "James Whitfield", "Employee ID": "MBK-4421", "Email": "james.whitfield@meridianbank.com", "Enrolled Devices Found": "0", "MDM Platform": "Microsoft Intune", "Enrollment Required": "Yes", "Provisioning Status": "Blocked"} },
+                { id: "vid-dev-001", type: "video", label: "Browser Agent Recording", data: { videoPath: "/data/intune_device_check_INC-2026-05312.webm" } }
             ],
             delay_ms: 4000
         },
