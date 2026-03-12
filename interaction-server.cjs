@@ -33,7 +33,7 @@ const corsHeaders = {
     'Access-Control-Allow-Headers': 'Content-Type'
 };
 
-let state = { sent: false, confirmed: false, signals: {} };
+let state = { emailSent: {}, confirmed: false, signals: {} };
 let runningProcesses = new Map();
 
 // Startup init
@@ -75,7 +75,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (cleanPath === '/reset') {
-        state = { sent: false, confirmed: false, signals: {} };
+        state = { emailSent: {}, confirmed: false, signals: {} };
         console.log('Demo Reset Triggered');
 
         fs.writeFileSync(signalFile, JSON.stringify({ APPROVE_CHANGE: false, CONFIRM_RESOLUTION: false }, null, 4));
@@ -184,15 +184,25 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (cleanPath === '/email-status' && req.method === 'GET') {
+        const urlObj = new URL(req.url, 'http://localhost');
+        const caseId = urlObj.searchParams.get('caseId') || '_default';
         res.writeHead(200, { ...corsHeaders, 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ sent: state.sent })); return;
+        res.end(JSON.stringify({ sent: !!state.emailSent[caseId] })); return;
     }
 
     if (cleanPath === '/email-status' && req.method === 'POST') {
         let body = '';
         req.on('data', d => body += d);
         req.on('end', () => {
-            try { const p = JSON.parse(body); state.sent = p.sent; } catch(e) {}
+            try {
+                const p = JSON.parse(body);
+                const caseId = p.caseId || '_default';
+                if (p.sent === false) {
+                    state.emailSent[caseId] = false;
+                } else if (p.sent === true) {
+                    state.emailSent[caseId] = true;
+                }
+            } catch(e) {}
             res.writeHead(200, { ...corsHeaders, 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ status: 'ok' }));
         }); return;

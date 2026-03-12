@@ -363,7 +363,7 @@ const DatasetViewer = ({ artifact, onClose }) => {
 };
 
 
-const EmailDraftViewer = ({ artifact, onClose }) => {
+const EmailDraftViewer = ({ artifact, onClose, processId }) => {
     const { to, from, cc, bcc, subject, body, isIncoming, isSent } = artifact.data || {};
     const isReadOnly = isIncoming || isSent;
     const [sending, setSending] = useState(false);
@@ -375,7 +375,7 @@ const EmailDraftViewer = ({ artifact, onClose }) => {
             await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/email-status`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ sent: true })
+                body: JSON.stringify({ sent: true, caseId: processId })
             });
             // Simulate delay for "visual" confirmation
             await new Promise(r => setTimeout(r, 1000));
@@ -1365,7 +1365,7 @@ const ProcessDetails = () => {
                         )}
 
                         {selectedArtifact.type === 'email_draft' && (
-                            <EmailDraftViewer artifact={selectedArtifact} onClose={closeArtifactPanel} />
+                            <EmailDraftViewer artifact={selectedArtifact} onClose={closeArtifactPanel} processId={id} />
                         )}
 
                         {selectedArtifact.type === 'decision' && (

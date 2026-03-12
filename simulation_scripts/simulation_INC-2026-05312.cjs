@@ -55,22 +55,22 @@ const updateProcessListStatus = async (processId, status, currentStatus) => {
     }
 };
 
-const waitForEmail = async () => {
-    console.log("Waiting for user to send email...");
+const waitForEmail = async (caseId) => {
+    console.log(`Waiting for user to send email for ${caseId}...`);
     const API_URL = process.env.VITE_API_URL || 'http://localhost:3001';
     try {
         await fetch(`${API_URL}/email-status`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ sent: false })
+            body: JSON.stringify({ sent: false, caseId })
         });
     } catch (e) {}
     while (true) {
         try {
-            const response = await fetch(`${API_URL}/email-status`);
+            const response = await fetch(`${API_URL}/email-status?caseId=${caseId}`);
             if (response.ok) {
                 const { sent } = await response.json();
-                if (sent) { console.log("Email sent!"); return true; }
+                if (sent) { console.log(`Email sent for ${caseId}!`); return true; }
             }
         } catch (e) { }
         await delay(2000);
@@ -244,7 +244,7 @@ const waitForEmail = async () => {
                 artifacts: step.artifacts || []
             });
             await updateProcessListStatus(PROCESS_ID, "Needs Attention", "Draft Review: Email Pending");
-            await waitForEmail();
+            await waitForEmail(PROCESS_ID);
             updateProcessLog(PROCESS_ID, {
                 id: step.id,
                 time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
