@@ -84,6 +84,14 @@ const server = http.createServer(async (req, res) => {
                         ticketId: "INC-2026-05134"
                     },
                     {
+                        id: "INC-2026-05287", name: "Sarah Mitchell — Adobe Creative Cloud Access Request", category: "IT Service Management",
+                        stockId: "INC-2026-05287", year: new Date().toISOString().split('T')[0],
+                        status: "In Progress", currentStatus: "Awaiting trigger",
+                        subject: "Sarah Mitchell, Marketing", request: "Adobe Creative Cloud license provisioning",
+                        documentType: "Service Request", riskLevel: "Low",
+                        ticketId: "INC-2026-05287"
+                    },
+                    {
                         id: "INC-2026-04821", name: "James Holloway — Account Lockout", category: "IT Service Management",
                         stockId: "INC-2026-04821", year: new Date().toISOString().split('T')[0],
                         status: "In Progress", currentStatus: "Awaiting trigger",
@@ -97,6 +105,7 @@ const server = http.createServer(async (req, res) => {
 
                 const scripts = [
                     { file: 'simulation_INC-2026-05134.cjs', id: 'INC-2026-05134' },
+                    { file: 'simulation_INC-2026-05287.cjs', id: 'INC-2026-05287' },
                     { file: 'simulation_INC-2026-04821.cjs', id: 'INC-2026-04821' }
                 ];
 
