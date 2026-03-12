@@ -1,5 +1,16 @@
 try { require('dotenv').config(); } catch(e) {}
 
+process.on('uncaughtException', (err) => {
+    console.error('UNCAUGHT EXCEPTION:', err.message, err.stack);
+    process.exit(1);
+});
+process.on('unhandledRejection', (reason) => {
+    console.error('UNHANDLED REJECTION:', reason);
+    process.exit(1);
+});
+
+console.log('Starting server... PORT env:', process.env.PORT);
+
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
