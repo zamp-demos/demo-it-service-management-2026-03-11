@@ -153,7 +153,8 @@ const waitForEmail = async () => {
                 "Request submitted and procurement reference number returned"
 ],
             artifacts: [
-                { id: "tbl-proc-001", type: "table", label: "Procurement Request", data: {"Procurement Reference": "PROC-2026-00892", "Software": "Actimize", "Vendor": "NICE Actimize", "Seats Requested": "1", "Cost Per Seat": "$18,000 / year", "Business Justification": "New AML Compliance Analyst \u2014 core platform access required from start date", "Urgency": "High \u2014 Start Date March 17", "Status": "Pending Procurement Approval"} }
+                { id: "tbl-proc-001", type: "table", label: "Procurement Request", data: {"Procurement Reference": "PROC-2026-00892", "Software": "Actimize", "Vendor": "NICE Actimize", "Seats Requested": "1", "Cost Per Seat": "$18,000 / year", "Business Justification": "New AML Compliance Analyst \u2014 core platform access required from start date", "Urgency": "High \u2014 Start Date March 17", "Status": "Pending Procurement Approval"} },
+                { id: "vid-proc-submit-001", type: "video", label: "Procurement Portal — Request Submission", videoPath: "/data/procurement_submission_INC-2026-05398.webm" }
             ],
             delay_ms: 3000
         },
@@ -199,7 +200,8 @@ const waitForEmail = async () => {
                 "Standard Analyst permission set assigned \u2014 transaction monitoring, alert review, case management, report access"
 ],
             artifacts: [
-                { id: "tbl-prov-001", type: "table", label: "Provisioning Confirmation", data: {"User": "Daniel Harris", "Email": "daniel.harris@meridianbank.com", "Role": "AML Compliance Analyst", "Permission Set": "Standard Analyst", "Access": "Transaction Monitoring, Alert Review, Case Management, Reports", "Account Status": "Active"} }
+                { id: "tbl-prov-001", type: "table", label: "Provisioning Confirmation", data: {"User": "Daniel Harris", "Email": "daniel.harris@meridianbank.com", "Role": "AML Compliance Analyst", "Permission Set": "Standard Analyst", "Access": "Transaction Monitoring, Alert Review, Case Management, Reports", "Account Status": "Active"} },
+                { id: "vid-prov-001", type: "video", label: "Actimize Admin Portal — Account Provisioning", videoPath: "/data/actimize_provisioning_INC-2026-05398.webm" }
             ],
             delay_ms: 4000
         },
