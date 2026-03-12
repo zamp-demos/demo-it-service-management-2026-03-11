@@ -122,6 +122,21 @@ const server = http.createServer(async (req, res) => {
                             submittedBy: "Michael Torres, AML Compliance Manager",
                             assignedTo: "IT Service Desk"
                         }
+                    },
+                    {
+                        id: "INC-2026-05441", name: "Ryan Carter — Contractor IT Onboarding", category: "IT Service Management",
+                        stockId: "INC-2026-05441", year: new Date().toISOString().split('T')[0],
+                        status: "In Progress", currentStatus: "Starting...",
+                        keyDetails: {
+                            subject: "Ryan Carter, IT Infrastructure Contractor",
+                            request: "System access provisioning — contractor onboarding",
+                            ticketId: "INC-2026-05441",
+                            priority: "P2 — High",
+                            contractType: "Fixed Term — 3 Months",
+                            engagementScope: "Cloud Migration — AWS to Azure",
+                            submittedBy: "David Langley, Head of IT Infrastructure",
+                            assignedTo: "IT Service Desk"
+                        }
                     }
                 ];
                 fs.writeFileSync(processesPath, JSON.stringify(cases, null, 4));
@@ -133,7 +148,8 @@ const server = http.createServer(async (req, res) => {
                     { file: 'simulation_INC-2026-05287.cjs', id: 'INC-2026-05287' },
                     { file: 'simulation_INC-2026-04821.cjs', id: 'INC-2026-04821' },
                     { file: 'simulation_INC-2026-05312.cjs', id: 'INC-2026-05312' },
-                    { file: 'simulation_INC-2026-05398.cjs', id: 'INC-2026-05398' }
+                    { file: 'simulation_INC-2026-05398.cjs', id: 'INC-2026-05398' },
+                    { path: path.join(SIMULATION_SCRIPTS_DIR, 'simulation_INC-2026-05441.cjs'), id: 'INC-2026-05441' }
                 ];
 
                 let totalDelay = 0;
