@@ -109,6 +109,19 @@ const server = http.createServer(async (req, res) => {
                             priority: "P2 — High",
                             assignedTo: "IT Security Desk"
                         }
+                    },
+                    {
+                        id: "INC-2026-05398", name: "Daniel Harris — Actimize Access Request", category: "IT Service Management",
+                        stockId: "INC-2026-05398", year: new Date().toISOString().split('T')[0],
+                        status: "In Progress", currentStatus: "Starting...",
+                        keyDetails: {
+                            subject: "Daniel Harris, AML Compliance",
+                            request: "Actimize license provisioning — new joiner",
+                            ticketId: "INC-2026-05398",
+                            priority: "P2 — High",
+                            submittedBy: "Michael Torres, AML Compliance Manager",
+                            assignedTo: "IT Service Desk"
+                        }
                     }
                 ];
                 fs.writeFileSync(processesPath, JSON.stringify(cases, null, 4));
@@ -119,7 +132,8 @@ const server = http.createServer(async (req, res) => {
                     { file: 'simulation_INC-2026-05134.cjs', id: 'INC-2026-05134' },
                     { file: 'simulation_INC-2026-05287.cjs', id: 'INC-2026-05287' },
                     { file: 'simulation_INC-2026-04821.cjs', id: 'INC-2026-04821' },
-                    { file: 'simulation_INC-2026-05312.cjs', id: 'INC-2026-05312' }
+                    { file: 'simulation_INC-2026-05312.cjs', id: 'INC-2026-05312' },
+                    { file: 'simulation_INC-2026-05398.cjs', id: 'INC-2026-05398' }
                 ];
 
                 let totalDelay = 0;
