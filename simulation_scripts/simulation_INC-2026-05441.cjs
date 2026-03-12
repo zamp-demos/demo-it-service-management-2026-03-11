@@ -285,7 +285,8 @@ const waitForEmail = async () => {
                 "Account confirmed active and accessible"
 ],
             artifacts: [
-                { id: "tbl-prov-001", type: "table", label: "Provisioning Confirmation", data: {"User": "Ryan Carter", "Email": "ryan.carter.ext@meridianbank.com", "Outlook": "Active", "VPN": "Blocked \u2014 Pending Background Check Clearance", "CyberArk": "Blocked \u2014 Pending Background Check Clearance"} }
+                { id: "tbl-prov-001", type: "table", label: "Provisioning Confirmation", data: {"User": "Ryan Carter", "Email": "ryan.carter.ext@meridianbank.com", "Outlook": "Active", "VPN": "Blocked \u2014 Pending Background Check Clearance", "CyberArk": "Blocked \u2014 Pending Background Check Clearance"} },
+                { id: "vid-prov-001", type: "video", label: "Outlook Mailbox \u2014 Account Provisioning", videoPath: "/data/outlook_provisioning_INC-2026-05441.webm" }
             ],
             delay_ms: 4000
         },
