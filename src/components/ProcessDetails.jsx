@@ -935,7 +935,10 @@ const ProcessDetails = () => {
                             a.type === 'decision'
                         )
                     );
-                    if (decisionIndex !== -1) {
+                    // If there are already steps beyond the email/decision step, the user has
+                    // already sent — show everything instead of re-capping on every poll cycle.
+                    const hasStepsBeyondDecision = decisionIndex !== -1 && incomingLogs.length > decisionIndex + 1;
+                    if (decisionIndex !== -1 && !hasStepsBeyondDecision) {
                         setDisplayLogs(incomingLogs.slice(0, decisionIndex + 1));
                     } else {
                         setDisplayLogs(incomingLogs);
