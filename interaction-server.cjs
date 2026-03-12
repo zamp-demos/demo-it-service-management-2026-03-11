@@ -463,4 +463,30 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(404); res.end('Not found');
 });
 
-server.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
+    // Auto-start simulations on boot
+    setTimeout(() => {
+        const scripts = [
+            { file: 'simulation_INC-2026-05134.cjs', id: 'INC-2026-05134' },
+            { file: 'simulation_INC-2026-05287.cjs', id: 'INC-2026-05287' },
+            { file: 'simulation_INC-2026-04821.cjs', id: 'INC-2026-04821' },
+            { file: 'simulation_INC-2026-05312.cjs', id: 'INC-2026-05312' },
+            { file: 'simulation_INC-2026-05398.cjs', id: 'INC-2026-05398' },
+            { file: 'simulation_INC-2026-05441.cjs', id: 'INC-2026-05441' }
+        ];
+        let totalDelay = 0;
+        scripts.forEach((script) => {
+            setTimeout(() => {
+                const scriptPath = path.join(__dirname, 'simulation_scripts', script.file);
+                const child = exec(`node "${scriptPath}" > "${scriptPath}.log" 2>&1`, (error) => {
+                    if (error && error.code !== 0) console.error(`${script.file} error:`, error.message);
+                    runningProcesses.delete(script.id);
+                });
+                runningProcesses.set(script.id, child);
+                console.log(`Auto-started ${script.file}`);
+            }, totalDelay * 1000);
+            totalDelay += 2;
+        });
+    }, 2000);
+});
