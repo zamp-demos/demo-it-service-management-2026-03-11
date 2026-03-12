@@ -97,6 +97,18 @@ const server = http.createServer(async (req, res) => {
                         status: "In Progress", currentStatus: "Awaiting trigger",
                         subject: "James Holloway, Sales Operations", request: "Account locked — unable to log in",
                         ticketId: "INC-2026-04821"
+                    },
+                    {
+                        id: "INC-2026-05312", name: "James Whitfield — VPN Access Request", category: "IT Service Management",
+                        stockId: "INC-2026-05312", year: new Date().toISOString().split('T')[0],
+                        status: "In Progress", currentStatus: "Starting...",
+                        keyDetails: {
+                            subject: "James Whitfield, Fixed Income Trading",
+                            request: "Corporate VPN access provisioning",
+                            ticketId: "INC-2026-05312",
+                            priority: "P2 — High",
+                            assignedTo: "IT Security Desk"
+                        }
                     }
                 ];
                 fs.writeFileSync(processesPath, JSON.stringify(cases, null, 4));
@@ -106,7 +118,8 @@ const server = http.createServer(async (req, res) => {
                 const scripts = [
                     { file: 'simulation_INC-2026-05134.cjs', id: 'INC-2026-05134' },
                     { file: 'simulation_INC-2026-05287.cjs', id: 'INC-2026-05287' },
-                    { file: 'simulation_INC-2026-04821.cjs', id: 'INC-2026-04821' }
+                    { file: 'simulation_INC-2026-04821.cjs', id: 'INC-2026-04821' },
+                    { file: 'simulation_INC-2026-05312.cjs', id: 'INC-2026-05312' }
                 ];
 
                 let totalDelay = 0;
