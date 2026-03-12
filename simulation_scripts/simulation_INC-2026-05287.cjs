@@ -151,7 +151,8 @@ const waitForEmail = async () => {
                 "License inventory updated \u2014 3 unassigned licenses remaining"
 ],
             artifacts: [
-                { id: "tbl-prov-001", type: "table", label: "Provisioning Confirmation", data: {"User": "sarah.mitchell@boa.com", "License Tier": "Creative Cloud All Apps", "Activation Status": "Active", "Provisioned At": "2026-03-12 09:19 AM", "Remaining Unassigned Licenses": "3"} }
+                { id: "tbl-prov-001", type: "table", label: "Provisioning Confirmation", data: {"User": "sarah.mitchell@boa.com", "License Tier": "Creative Cloud All Apps", "Activation Status": "Active", "Provisioned At": "2026-03-12 09:19 AM", "Remaining Unassigned Licenses": "3"} },
+                { id: "vid-prov-001", type: "video", label: "Browser Agent Recording", data: { videoPath: "/videos/adobe_admin_console_INC-2026-05287.webm" } }
             ],
             delay_ms: 4000
         },
