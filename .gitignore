@@ -4,5 +4,4 @@ dist
 interaction-signals.json
 *.log
 .DS_Store
-public/data/processes.json
 simulation_scripts/*.log
