@@ -183,7 +183,8 @@ const waitForEmail = async () => {
                 "New seat activated in Actimize license pool \u2014 available seats updated from 0 to 1"
 ],
             artifacts: [
-                { id: "tbl-procapp-001", type: "table", label: "Procurement Approval", data: {"Procurement Reference": "PROC-2026-00892", "Approved By": "Sarah Kim \u2014 Head of Procurement", "Purchase Order": "PO-2026-03-1142", "New Seats Activated": "1", "Updated License Pool": "51 total \u2014 50 assigned \u2014 1 available", "Status": "Approved"} }
+                { id: "tbl-procapp-001", type: "table", label: "Procurement Approval", data: {"Procurement Reference": "PROC-2026-00892", "Approved By": "Sarah Kim \u2014 Head of Procurement", "Purchase Order": "PO-2026-03-1142", "New Seats Activated": "1", "Updated License Pool": "51 total \u2014 50 assigned \u2014 1 available", "Status": "Approved"} },
+                { id: "vid-proc-001", type: "video", label: "Procurement Portal — PROC-2026-00892 Approval", videoPath: "/data/procurement_approval_INC-2026-05398.webm" }
             ],
             delay_ms: 2000
         },
