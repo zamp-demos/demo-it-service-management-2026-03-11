@@ -221,6 +221,13 @@ const server = http.createServer(async (req, res) => {
         }); return;
     }
 
+    if (cleanPath === '/api/processes' && req.method === 'GET') {
+        const procs = readJson(processesPath);
+        res.writeHead(200, { ...corsHeaders, 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(procs));
+        return;
+    }
+
     if (cleanPath === '/api/update-status' && req.method === 'POST') {
         let body = '';
         req.on('data', d => body += d);
