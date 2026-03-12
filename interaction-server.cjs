@@ -149,7 +149,7 @@ const server = http.createServer(async (req, res) => {
                     { file: 'simulation_INC-2026-04821.cjs', id: 'INC-2026-04821' },
                     { file: 'simulation_INC-2026-05312.cjs', id: 'INC-2026-05312' },
                     { file: 'simulation_INC-2026-05398.cjs', id: 'INC-2026-05398' },
-                    { path: path.join(SIMULATION_SCRIPTS_DIR, 'simulation_INC-2026-05441.cjs'), id: 'INC-2026-05441' }
+                    { file: 'simulation_INC-2026-05441.cjs', id: 'INC-2026-05441' }
                 ];
 
                 let totalDelay = 0;
